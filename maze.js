@@ -7,3 +7,4 @@ function beginGame(){
 		console.log("is this working??");
 	}
 }
+addLoadEvent(beginGame);
