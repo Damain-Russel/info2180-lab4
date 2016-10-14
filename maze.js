@@ -5,6 +5,6 @@ var gameStatus = false;
 function beginGame(){
 	$("#start").click(function(){
 		console.log("is this working??");
-	}
+	});
 }
 addLoadEvent(beginGame);
