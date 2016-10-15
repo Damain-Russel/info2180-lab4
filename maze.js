@@ -1,5 +1,6 @@
 "use strict"
 var loser = false;
+var sessionStart = false;
 window.onload = function(){
     var boundary = document.querySelectorAll(".boundary");
     for (var i = 0; i < boundary.length-1; i++) {
@@ -10,22 +11,29 @@ window.onload = function(){
 }
 
 function gameOver(){
-    setBoundaryCSS("boundary youlose");
-    loser = true;
+    if(sessionStart){
+        setBoundaryCSS("boundary youlose");
+        loser = true;
+    }
 }
 
 function goal(){
-    if(!loser){
-        setStat("You Win!");
-    }
-    else{
-        setStat("You Lose!");
+    if(sessionStart){
+        if(!loser){
+            setStat("You Win!");
+        }
+        else{
+            setStat("You Lose!");
+        }
+        sessionStart = false;
     }
 }
 
 function beginGame(){
     setBoundaryCSS("boundary");
+    sessionStart = true;
     loser = false;
+    setStat("Game In Session");
 }
 
 function setBoundaryCSS(cssName){
