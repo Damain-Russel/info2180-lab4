@@ -1,8 +1,14 @@
 "use strict";
 window.onload = function(){
-    document.getElementById("boundary1").addEventListener("mouseover", gameOver);
+    var boundary = document.querySelectorAll(".boundary");
+    for (var i = 0; i < boundary.length-1; i++) {
+        boundary[i].addEventListener("mouseover", gameOver);
+    }
 }
 
 function gameOver(){
-    document.getElementById("boundary1").className = "boundary youlose";
+    var boundary = document.querySelectorAll(".boundary");
+    for (var i = 0; i < boundary.length-1; i++) {
+        boundary[i].className = "boundary youlose";
+    }
 }
