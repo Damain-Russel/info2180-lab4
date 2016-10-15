@@ -16,7 +16,10 @@ function gameOver(){
 
 function goal(){
     if(!loser){
-        alert('You win!');
+        setStat("You Win!");
+    }
+    else{
+        setStat("You Lose!");
     }
 }
 
@@ -30,4 +33,8 @@ function setBoundaryCSS(cssName){
     for (var i = 0; i < boundary.length-1; i++) {
         boundary[i].className = cssName;
     }
+}
+
+function setStat(stat){
+    document.getElementById("status").innerHTML = stat;
 }
