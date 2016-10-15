@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 var loser = false;
 window.onload = function(){
     var boundary = document.querySelectorAll(".boundary");
@@ -6,18 +6,28 @@ window.onload = function(){
         boundary[i].addEventListener("mouseover", gameOver);
     }
     document.getElementById("end").addEventListener("mouseover",goal);
+    document.getElementById("start").addEventListener("click",beginGame);
 }
 
 function gameOver(){
-    var boundary = document.querySelectorAll(".boundary");
-    for (var i = 0; i < boundary.length-1; i++) {
-        boundary[i].className = "boundary youlose";
-    }
+    setBoundaryCSS("boundary youlose");
     loser = true;
 }
 
 function goal(){
     if(!loser){
         alert('You win!');
+    }
+}
+
+function beginGame(){
+    setBoundaryCSS("boundary");
+    loser = false;
+}
+
+function setBoundaryCSS(cssName){
+    var boundary = document.querySelectorAll(".boundary");
+    for (var i = 0; i < boundary.length-1; i++) {
+        boundary[i].className = cssName;
     }
 }
