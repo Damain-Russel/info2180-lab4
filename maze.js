@@ -1,10 +1,8 @@
 "use strict";
-var playing = false;
-var gameStatus = false;
-
-function beginGame(){
-	$("#start").click(function(){
-		console.log("is this working??");
-	});
+window.onload = function(){
+    document.getElementById("boundary1").addEventListener("mouseover", gameOver);
 }
-addLoadEvent(beginGame);
+
+function gameOver(){
+    document.getElementById("boundary1").className = "boundary youlose";
+}
