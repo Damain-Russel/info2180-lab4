@@ -5,6 +5,7 @@ window.onload = function(){
     for (var i = 0; i < boundary.length-1; i++) {
         boundary[i].addEventListener("mouseover", gameOver);
     }
+    document.getElementById("end").addEventListener("mouseover",goal);
 }
 
 function gameOver(){
